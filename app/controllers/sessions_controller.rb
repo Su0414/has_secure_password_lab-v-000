@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params[:name] && params[:name] != ''
+    if params[:user][:name] && params[:user][:name] != ''
       user = User.find_by(name: params[:name])
       binding.pry
       if user.authenticate(params[:user][:password])
