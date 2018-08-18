@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
       user = User.find_by(name: params[:name])
       binding.pry
       if user.authenticate(params[:user][:password])
-
         session[:user_id] = user.id
         @user = user
         redirect_to '/welcome/home'
